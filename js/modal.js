@@ -16,4 +16,4 @@ window.onclick = function (event) {
   }
 };
 
-console.log(typeof alert);
+//console.log(typeof alert);

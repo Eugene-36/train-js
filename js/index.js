@@ -147,15 +147,43 @@
 //11. Write a function that formats a date in such format "YYYY/MM/DDHH:mm".
 
 function formatDate(str) {
-  var b = str.reverse().join("-");
-  return b;
+  //   var b = str.reverse().join("-");
+  //   return b;
 
-  //   function reformatDateString(s) {
-  //     var b = s.split(/\D/);
-  //     return b.reverse().join("-");
-  //   }
+  let date_ob = str;
 
-  //   console.log(reformatDateString("25-12-2014")); // 2014-12-25
+  // adjust 0 before single digit date
+  let date = ("0" + date_ob.getDate()).slice(-2);
+
+  // current month
+  let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+
+  // current year
+  let year = date_ob.getFullYear();
+
+  // current hours
+  let hours = date_ob.getHours();
+
+  // current minutes
+  let minutes = date_ob.getMinutes();
+
+  // current seconds
+  let seconds = date_ob.getSeconds();
+
+  // prints date & time in YYYY-MM-DD HH:MM:SS format
+  console.log(
+    year +
+      "-" +
+      month +
+      "-" +
+      date +
+      " " +
+      hours +
+      ":" +
+      minutes +
+      ":" +
+      seconds
+  );
 }
 console.log(formatDate(new Date("6/15/2019 09:15:00"))); // "2018/06/15 09:15"
 console.log(formatDate(new Date())); // "2020/04/07 12:56" // gets current local time

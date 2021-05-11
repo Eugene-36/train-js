@@ -171,19 +171,7 @@ function formatDate(str) {
   let seconds = date_ob.getSeconds();
 
   // prints date & time in YYYY-MM-DD HH:MM:SS format
-  console.log(
-    year +
-      "-" +
-      month +
-      "-" +
-      date +
-      " " +
-      hours +
-      ":" +
-      minutes +
-      ":" +
-      seconds
-  );
+  console.log(year + "-" + month + "-" + date + " " + hours + ":" + minutes);
 }
 console.log(formatDate(new Date("6/15/2019 09:15:00"))); // "2018/06/15 09:15"
 console.log(formatDate(new Date())); // "2020/04/07 12:56" // gets current local time

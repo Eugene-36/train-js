@@ -76,11 +76,51 @@
 //todo: Седьмая задача
 //7. Write a function which creates an array from the given range of numbers
 
-function makeListFromRange(array) {
-  for (let i = 0; i < array.length; i++) {
-    const element = array[i];
-    console.log(element);
-  }
-}
+// function makeListFromRange(array) {
+//   var lastItem = array[array.length - 1];
 
-makeListFromRange([2, 7]); // [2, 3, 4, 5, 6, 7]
+//   let i = array[0];
+//   while (i < lastItem) {
+//     const res = i;
+//     console.log(res);
+//     i++;
+//   }
+//   return i;
+// }
+
+// console.log(makeListFromRange([2, 7])); // [2, 3, 4, 5, 6, 7]
+
+//todo: Восьмая задача
+
+// 8. Write a function that accepts an array of object and returns new array of values by passed key name.
+// That function should not change the original array. Reuse function from task 2.
+
+// const fruits = [
+//   { name: "apple", weight: 0.5 },
+//   { name: "pineapple", weight: 2 },
+// ];
+
+// function getArrayOfKeys(obj) {
+//   let m = obj.map((el) => {
+//     return el.name;
+//   });
+//   return m;
+// }
+// console.log(getArrayOfKeys(fruits, "name")); // returns [‘apple’, ‘pineapple’]
+
+//todo: Девятая задача
+
+//9. Write a function that accepts an array of groceries objects and returns total weight of all items.Reuse function from task 2.
+
+const basket = [
+  { name: "Bread", weight: 0.3 },
+  { name: "Coca-Cola", weight: 0.5 },
+  { name: "Watermelon", weight: 8 },
+];
+function getTotalWeight(props) {
+  const s = props.map((el) => {
+    return Object.values(el).pop();
+  });
+  return s.reduce((acc, currentValue) => acc + currentValue);
+}
+console.log(getTotalWeight(basket)); // returns 8.8

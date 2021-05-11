@@ -112,15 +112,50 @@
 
 //9. Write a function that accepts an array of groceries objects and returns total weight of all items.Reuse function from task 2.
 
-const basket = [
-  { name: "Bread", weight: 0.3 },
-  { name: "Coca-Cola", weight: 0.5 },
-  { name: "Watermelon", weight: 8 },
-];
-function getTotalWeight(props) {
-  const s = props.map((el) => {
-    return Object.values(el).pop();
-  });
-  return s.reduce((acc, currentValue) => acc + currentValue);
+// const basket = [
+//   { name: "Bread", weight: 0.3 },
+//   { name: "Coca-Cola", weight: 0.5 },
+//   { name: "Watermelon", weight: 8 },
+// ];
+// function getTotalWeight(props) {
+//   const s = props.map((el) => {
+//     return Object.values(el).pop();
+//   });
+//   return s.reduce((acc, currentValue) => acc + currentValue);
+// }
+// console.log(getTotalWeight(basket)); // returns 8.8
+
+//todo: Десятая задача
+
+// 10. Write a function which returns a day number that was some amount of days ago from the passed date.
+// It should not change the given source date.
+
+// const date = new Date(2020, 0, 2);
+// function getPastDay(date, day) {
+//   var todayDate = date,
+//     weekDate = new Date();
+//   let s = weekDate.setTime(todayDate.getTime() - day * 24 * 3600000);
+//   var d = new Date(s);
+//   console.log(d);
+// }
+// console.log(getPastDay(date, 1)); // 1, (1 Jan 2020)
+// console.log(getPastDay(date, 2)); // 31, (31 Dec 2019)
+// console.log(getPastDay(date, 365)); // 2, (2 Jan 2019)
+
+//todo: Одиннадцатая  задача
+
+//11. Write a function that formats a date in such format "YYYY/MM/DDHH:mm".
+
+function formatDate(str) {
+  var b = str.reverse().join("-");
+  return b;
+
+  //   function reformatDateString(s) {
+  //     var b = s.split(/\D/);
+  //     return b.reverse().join("-");
+  //   }
+
+  //   console.log(reformatDateString("25-12-2014")); // 2014-12-25
 }
-console.log(getTotalWeight(basket)); // returns 8.8
+console.log(formatDate(new Date("6/15/2019 09:15:00"))); // "2018/06/15 09:15"
+console.log(formatDate(new Date())); // "2020/04/07 12:56" // gets current local time
